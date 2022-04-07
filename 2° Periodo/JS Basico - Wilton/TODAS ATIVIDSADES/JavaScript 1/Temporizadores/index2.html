@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            function play() {
+                crono1 = setInterval("increment()", 1000);
+                document.getElementById("btnplay").disabled = true;
+                document.getElementById("btnpause").disabled = false;
+                document.getElementById("btnstop").disabled = false;
+            }
+            function increment() {
+                document.getElementById("cont").innerHTML++;
+            }
+            function stop() {
+                pause();
+                if (confirm("Deseja parar o cronometro?")) {
+                    document.getElementById("cont").innerHTML = 0;
+                } else play();
+            }
+            function pause() {
+                clearInterval(crono1);
+            }
+        </script>
+    </head>
+    <body>
+        <form action="">
+            <input type="button" id="btnplay" value="Play" onclick="play()" />
+            <input
+                type="button"
+                id="btnpause"
+                value="Pause"
+                onclick="pause()"
+            />
+            <input type="button" id="btnstop" value="Stop" onclick="stop()" />
+        </form>
+        <p>Contador: <span id="cont">0</span></p>
+    </body>
+</html>

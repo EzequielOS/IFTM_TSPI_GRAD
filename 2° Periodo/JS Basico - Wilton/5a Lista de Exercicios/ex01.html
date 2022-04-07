@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="Author" content="Ezequiel de Oliveira">
+<meta name="Description" content="Js Basico">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="utf-8">
+<title></title>
+<script type="text/javascript">
+	function mostrarDobro() {
+		valor = document.getElementById("txtValor").value;
+		if (valor == "") {
+			alert("Valor invalido! Digite um numero.")
+			document.getElementById("txtValor").focus();
+		} else {
+			document.getElementById("txtResultado").value = valor * 2;
+		}
+	}
+</script>
+</head>
+<body>
+	<form>
+		<label for="txtValor">Digite um valor: </label> 
+		<input type="text" id="txtValor">
+		
+		<br> 
+		<br> 
+		<input type="button" value="Mostrar o Dobro" onclick="mostrarDobro()"> 
+		
+		<br>
+		<br> 
+		<label for="txtResultado">Dobro do Valor: </label> <input type="text" id="txtResultado">
+	</form>
+</body>
+</html>

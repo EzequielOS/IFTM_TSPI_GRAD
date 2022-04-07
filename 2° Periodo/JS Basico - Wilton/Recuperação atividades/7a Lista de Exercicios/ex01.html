@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="Author" content="Ezequiel de Oliveira">
+<meta name="Description" content="Js Basico">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="utf-8">
+<title></title>
+<style type="text/css">
+* {
+	box-sizing: border-box;
+	padding: 0px;
+	margin: 0px;
+}
+
+.boxBoy {
+	width: 150px;
+	height: 200px;
+	margin: auto;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -100px;
+	margin-left: -75px;
+}
+
+.boxBoy p {
+	text-align: center;
+}
+</style>
+<script type="text/javascript">
+	/*function changeBoy() {
+		imagem = document.getElementById("imgBoy").src = "images/ex001/assustado.png";
+		document.getElementById("txtBoy").innerHTML = "O que você quer?";
+	}
+	function changeBoy2(){
+		imagem = document.getElementById("imgBoy").src = "images/ex001/nervoso.png";
+		document.getElementById("txtBoy").innerHTML = "Não me aperte?";
+	}
+	function changeBoy3(){
+		nome = prompt('Seu nome:');
+		imagem = document.getElementById("imgBoy").src = "images/ex001/alegre.png";
+		document.getElementById("txtBoy").innerHTML = `${nome} Vamos Brincar?`;
+	}*/
+	
+	function changeBoy(nameImg, msg) {
+		document.getElementById("imgBoy").src = `images/ex001/${nameImg}.png`;
+		if (nameImg == "alegre") {
+			nome = prompt("Qual e teu nome?");
+			msg = `${nome}, Voce quer brincar?`;
+		}
+		document.getElementById("txtBoy").innerHTML = msg;
+	}
+	
+</script>
+</head>
+<body>
+	<div class="boxBoy">
+		<img id="imgBoy" src="images/ex001/pensativo.png"
+			alt="Desenho de um rosto pensativo" height="169" width="145"
+			onmouseenter="changeBoy('assustado', 'O que voce quer?')" 
+			onmousedown="changeBoy('nervoso', 'Nao aperta!')" 
+			onmouseup="changeBoy('alegre', '')" 
+			onmouseout="changeBoy('pensativo', 'zzzzzzzzzz!!!')"
+			/>
+		<p id="txtBoy">zzzzzzzzzz!!!</p>
+	</div>
+</body>
+</html>

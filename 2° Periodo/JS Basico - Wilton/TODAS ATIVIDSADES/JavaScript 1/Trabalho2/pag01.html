@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            text = prompt(
+                "Digite um texto qualquer: ",
+                "amor paz deus amizade amanha tarde noite abril"
+            );
+            letra = prompt("Digite uma letra: ", "a");
+
+            palavras = text.split(" ");
+            // 2º Passo: verificar se a primeira palavra do texto inicia com a letra
+            // informada pelo usuario
+            //primeiraPalavra = palavras[0]; //"amor"
+            achou = false;
+            palAchadas = "";
+            contador = 0;
+            for (i = 0; i < palavras.length; i++) {
+                // i = 2
+                palavra = palavras[i]; //"amor"
+                if (palavra.charAt(0) == letra) {
+                    palAchadas = palAchadas + palavra + "  ";
+                    contador++;
+                    achou = true;
+                }
+            }
+            if (!achou)
+                document.write(
+                    `<h2 style="color:red">Não foi encontrada nenhuma palavra com a letra <u>${letra}</u></h2>`
+                );
+            else {
+                document.write(
+                    `<h2 style="color:green">Foi(ram) encontrada(s) <u>${contador}</u> palavra(s) iniciada(s) com a letra <u>${letra}</u>:</h2>`
+                );
+                document.write(`<p>${palAchadas}</p>`);
+            }
+        </script>
+    </head>
+    <body></body>
+</html>

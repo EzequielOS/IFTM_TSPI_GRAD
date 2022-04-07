@@ -1,0 +1,42 @@
+<script>
+    var data = new Date();
+    var dia = String(data.getDay());
+
+    var semana = [
+        "Hoje é Domingo",
+        "Hoje é Segunda-feira",
+        "Hoje é Terça-feira",
+        "Hoje é Quarta-feira",
+        "Hoje é Quinta-feira",
+        "Hoje é Sexta-feira",
+        "Hoje é sábado",
+    ];
+
+    document.write(semana[dia]);
+
+    document.write(`<br>`);
+    document.write(`<br>`);
+
+    switch (dia) {
+        case "0":
+            document.write("Hoje é Domingo");
+            break;
+        case "1":
+            document.write("Hoje é Segunda-feira");
+            break;
+        case "2":
+            document.write("Hoje é Terça-feira");
+            break;
+        case "3":
+            document.write("Hoje é Quarta-feira");
+            break;
+        case "4":
+            document.write("Hoje é Quinta-feira");
+            break;
+        case "5":
+            document.write("Hoje é Sexta-feira");
+            break;
+        default:
+            document.write("Hoje é sábado");
+    }
+</script>

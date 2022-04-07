@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="Author" content="Ezequiel de Oliveira">
+<meta name="Description" content="Js Basico">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="utf-8">
+<title></title>
+<script type="text/javascript">
+	function calculaNotas(){
+		var notaB1 = document.getElementById("pBimestre").value;
+		var notaB2 = document.getElementById("sBimestre").value;
+		var total = parseFloat(notaB1) + parseFloat(notaB2);
+		
+		if(notaB1 == ""){
+			alert("ERRO! Nota 1° Bimestre precisa ser preenchida.");
+			document.getElementById("pBimestre").focus();
+		}
+		else if(notaB2 ==""){
+			alert("ERRO! Nota 2° Bimestre precisa ser preenchida.");
+			document.getElementById("sBimestre").focus();
+		}
+		
+		else if(total >= 60){
+			alert(`APROVADO! \n Sua nota total foi ${total} pontos.`);
+		}
+		else{
+			alert(`REPROVADO \n Faltou apenas ${60 - total} pontos.`);
+		}
+		
+	}
+</script>
+</head>
+<body>
+	<form>
+		<table align="center">
+			<tr>
+				<td><label for="pBimestre">NOTA (1°Bimestre): </label> <input type="text" id="pBimestre"></td>
+			</tr>
+			<tr>
+				<td><label for="sBimestre">NOTA (2°Bimestre): </label> <input type="text" id="sBimestre"></td>
+			</tr>
+			<tr>
+				<td><input type="button" value="Resultado" onclick="calculaNotas()"></td>
+			</tr>
+		</table>
+
+	</form>
+</body>
+</html>

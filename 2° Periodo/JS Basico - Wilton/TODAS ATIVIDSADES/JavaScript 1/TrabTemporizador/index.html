@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+
+        <style>
+            h1 {
+                color: red;
+                text-align: center;
+                padding: 10px;
+            }
+            .principal {
+                display: flex;
+                justify-content: center;
+                flex-direction: row;
+                width: 800px;
+                align-items: center;
+                margin: auto;
+            }
+            div {
+                padding: 20px;
+            }
+            h2 {
+                color: green;
+            }
+        </style>
+
+        <script>
+            count = 1;
+            function play() {
+                stop = setInterval("img()", 1000);
+            }
+            function pause() {
+                clearInterval(stop);
+            }
+            function img() {
+                count++;
+                console.log(count);
+                if (count > 3) count = 1;
+                document.getElementById("imagem").src = `img/${count}.jpg`;
+                if (count == 1) {
+                    document.getElementById("1").innerHTML = "Corola";
+                    document.getElementById("2").innerHTML = "155cv";
+                    document.getElementById("3").innerHTML = "3 anos";
+                    document.getElementById("4").innerHTML =
+                        "não foi informado";
+                } else if (count == 2) {
+                    document.getElementById("1").innerHTML = "Civic";
+                    document.getElementById("2").innerHTML = "140cv";
+                    document.getElementById("3").innerHTML = "3 anos";
+                    document.getElementById("4").innerHTML = "9,2km/l";
+                } else {
+                    document.getElementById("1").innerHTML = "Focus";
+                    document.getElementById("2").innerHTML = "172cv";
+                    document.getElementById("3").innerHTML = "5 anos";
+                    document.getElementById("4").innerHTML = "8,5km/l";
+                }
+            }
+        </script>
+    </head>
+    <body onload="play()">
+        <main>
+            <h1>LANÇAMENTOS 2014 - Carros Sedãs</h1>
+            <div class="principal">
+                <div>
+                    <img
+                        src="/img/1.jpg"
+                        alt=""
+                        id="imagem"
+                        onmouseenter="pause()"
+                        onmouseout="play()"
+                    />
+                </div>
+                <div>
+                    <h2>Características do Carro</h2>
+                    <p>° Nome: <span id="1">Corola</span></p>
+                    <p>° Potência do motor: <span id="2">155cv</span></p>
+                    <p>° Garantia: <span id="3">3 anos</span></p>
+                    <p>
+                        ° Consumo (cidade):
+                        <span id="4"> não foi informado</span>
+                    </p>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>

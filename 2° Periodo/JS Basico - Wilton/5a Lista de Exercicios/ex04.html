@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="Author" content="Ezequiel de Oliveira">
+<meta name="Description" content="Js Basico">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="utf-8">
+<title></title>
+<script type="text/javascript">
+	function soma(){
+		valor1 = parseFloat(document.getElementById("valor1").value);
+		valor2 = parseFloat(document.getElementById("valor2").value);
+
+
+		document.getElementById("txtResultado").value = valor1 + valor2;
+	}
+		function subtrai(){
+		valor1 = parseFloat(document.getElementById("valor1").value);
+		valor2 = parseFloat(document.getElementById("valor2").value);
+
+
+		document.getElementById("txtResultado").value = valor1 - valor2;
+	}
+		function multiplica(){
+		valor1 = parseFloat(document.getElementById("valor1").value);
+		valor2 = parseFloat(document.getElementById("valor2").value);
+
+
+		document.getElementById("txtResultado").value = valor1 * valor2;
+	}
+
+		function divide(){
+		valor1 = parseFloat(document.getElementById("valor1").value);
+		valor2 = parseFloat(document.getElementById("valor2").value);
+		if(valor2==0){
+			alert("Nao é possivel dividir por 0");
+		} else{
+		document.getElementById("txtResultado").value = valor1 / valor2;
+		}
+	}
+</script>
+</head>
+<body>
+	<strong>Calculadora</strong>
+	<form>
+		<label for="valor1">1° Valor: </label> 
+		<input type="text" id="valor1">
+		
+		<br>
+		<label for="valor2">2° Valor: </label> 
+		<input type="text" id="valor2">
+		
+		<br>
+		<br>
+		<input type="button" value="+" onclick="soma()">
+		<input type="button" value="-" onclick="subtrai()">
+		<input type="button" value="*" onclick="multiplica()">
+		<input type="button" value="/" onclick="divide()">
+		
+		<br>
+		<br>
+		<label for="txtResultado">Resultado: </label>
+		<input type="text" id="txtResultado">
+		
+	</form>
+</body>
+</html>

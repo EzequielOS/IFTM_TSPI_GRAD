@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            form label {
+                display: inline-block;
+                width: 150px;
+                padding: 10px;
+            }
+        </style>
+        <script src="/jwifi.js"></script>
+        <script>
+            function validar() {
+                var data = document.getElementById("txtNascimento").value;
+
+                var padrao =
+                    /^(([0-9]{2}\/[0-9]{2}\/[0-9]{2})|([0-9]{2}\/[0-9]{2}\/[0-9]{4}))$/;
+                padrao.test(data)
+                    ? alert("O Texto é valido!")
+                    : alert("O texto não é valido!");
+            }
+            function validar1() {
+                var texto = document.getElementById("txtCpf").value;
+                var padrao = /^[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}$/i;
+                padrao.test(texto)
+                    ? alert("O Texto é valido!")
+                    : alert("O texto não é valido!");
+            }
+            function validar2() {
+                var texto = document.getElementById("txtMatricula").value;
+                var padrao = /^(IFTM)-[0-9]{3}\/[0-9]{3}-[0-9|A-Z]{2}$/i;
+                padrao.test(texto)
+                    ? alert("O Texto é valido!")
+                    : alert("O texto não é valido!");
+            }
+            function validar3() {
+                var texto = document.getElementById("txtCod").value;
+                var padrao = /^(MT)-[0-9]{2}\.[0-9]{3}-(IFTM)$/i;
+                padrao.test(texto)
+                    ? alert("O Texto é valido!")
+                    : alert("O texto não é valido!");
+            }
+            function validar4() {
+                var texto = document.getElementById("txtCod2").value;
+                var padrao = /^(MT)-[0-9]{2}\.[0-9]{3}-(IFTM|iftm)$/;
+                padrao.test(texto)
+                    ? alert("O Texto é valido!")
+                    : alert("O texto não é valido!");
+            }
+            function validar5() {
+                var texto = document.getElementById("txtCod3").value;
+                var padrao =
+                    /^(MT|M\sT)-[0-9]{2}\.[0-9]{3}-(IFTM|I\sF\sT\sM|I\sFTM|IF\sTM|IFT\sM|I\sF\sTM)$/i;
+                padrao.test(texto)
+                    ? alert("O Texto é valido!")
+                    : alert("O texto não é valido!");
+            }
+            function validar6() {
+                var texto = document.getElementById("txtCod4").value;
+                var padrao =
+                    /^(MT|M\sT)-[0-9]{2}\.[0-9]{3}-(IFTM|I\sF\sT\sM|I\sFTM|IF\sTM|IFT\sM|I\sF\sTM)\s(Uberlândia\sCentro|Uberlândia)$/;
+                padrao.test(texto)
+                    ? alert("O Texto é valido!")
+                    : alert("O texto não é valido!");
+            }
+            function validar7() {
+                var texto = document.getElementById("txtNome").value;
+                var padrao =
+                    /^(IFTM)\s(campus)\s(Uberlândia\sCentro|Uberlândia)$/;
+                padrao.test(texto)
+                    ? alert("O Texto é valido!")
+                    : alert("O texto não é valido!");
+            }
+            function validar8() {
+                var texto = document.getElementById("txtTel").value;
+                var padrao = /^\+[0-9]{1,3}\(([0-9]{2})\)[0-9]{5}-[0-9]{4}$/i;
+                padrao.test(texto)
+                    ? alert("O Texto é valido!")
+                    : alert("O texto não é valido!");
+            }
+            function validar9() {
+                var texto = document.getElementById("txtTel2").value;
+                var padrao = /^\(([0-9]{2,3})\)[0-9]{5}-[0-9]{4}$/i;
+                padrao.test(texto)
+                    ? alert("O Texto é valido!")
+                    : alert("O texto não é valido!");
+            }
+            function validar10() {
+                var texto = document.getElementById("txtAltura").value;
+                var padrao =
+                    /^([1]{1}(\.|,)[3-9]{1,2})|([2]{1}(\.|,)[0-5]{1,2})$/i;
+                padrao.test(texto)
+                    ? alert("O Texto é valido!")
+                    : alert("O texto não é valido!");
+            }
+            function validar11() {
+                var texto = document.getElementById("txtFaturamento").value;
+                var padrao =
+                    /^(R\$[0-9]{1,3}(\.)[0-9]{1,3}(\.)[0-9]{1,3}(\.)[0-9]{1,3}(,)[0-9]{2})|(R\$[0-9]{1,3}(,)[0-9]{1,2})|(R\$[0-9]{1}(\.)[0-9]{3}(,)[0-9]{1,2})|(R\$[0-9]{1}(\.)[0-9]{3}(\.)[0-9]{3}(,)[0-9]{2})|(R\$[0-9]{1}(\.)[0-9]{3}(\.)[0-9]{3}(\.)[0-9]{3}(,)[0-9]{2})$/i;
+                padrao.test(texto)
+                    ? alert("O Texto é valido!")
+                    : alert("O texto não é valido!");
+            }
+            function validar12() {
+                var texto = document.getElementById("txtCronometro").value;
+                var padrao = /^[0-23]{2}:[0-59]{2}:[0-59]{2}:[0-99]{2}$/;
+                padrao.test(texto)
+                    ? alert("O Texto é valido!")
+                    : alert("O texto não é valido!");
+            }
+            function validar13() {
+                var texto = document.getElementById("txtSenha").value;
+                var padrao =
+                    /^[a-zA-Z0-9]{4,}[\.\-_]{1}&[a-pA-P]{1,}\.([a]|[e]|[i]|[o]|[u]){1,}(([\.]|[a-zA-Z]|[0-5]){0,})\-[^0-9]{1,},[^a-zA-Z0-9 ]{2}\.[^ab01]{1,}$/;
+                padrao.test(texto)
+                    ? alert("O Texto é valido!")
+                    : alert("O texto não é valido!");
+            }
+        </script>
+    </head>
+    <body>
+        <form action="">
+            <label for="">Data de Nascimento</label>
+            <input type="text" id="txtNascimento" value="20/03/1995" />
+            <input type="button" value="validar" onclick="validar()" />
+            <br />
+            <br />
+            <label for="">CPF</label>
+            <input
+                type="text"
+                id="txtCpf"
+                value="123.123.123-20"
+                onkeypress="inserirMascara('txtCpf','999.999.999-99')"
+            />
+            <input type="button" value="validar" onclick="validar1()" />
+            <br />
+            <br />
+            <label for="">Número de matrícula de um aluno:</label>
+            <input type="text" id="txtMatricula" value="IFTM-333/222-a2" />
+            <input type="button" value="validar" onclick="validar2()" />
+            <br />
+            <br />
+            <label for="">Código de uma disciplina do IFTM:</label>
+            <input
+                type="text"
+                id="txtCod"
+                value="MT-12.333-IFTM"
+                onkeypress="inserirMascara('txtCod','99-99.999-9999')"
+            />
+            <input type="button" value="validar" onclick="validar3()" />
+            <br />
+            <br />
+            <label for="">Código de uma disciplina do IFTM (versão 2):</label>
+            <input
+                type="text"
+                id="txtCod2"
+                value="MT-12.333-IFTM"
+                onkeypress="inserirMascara('txtCod2','99-99.999-9999')"
+            />
+            <input type="button" value="validar" onclick="validar4()" />
+            <br />
+            <br />
+            <label for="">Código de uma disciplina do IFTM (versão 3):</label>
+            <input type="text" id="txtCod3" value="MT-12.333-IFTM" />
+            <input type="button" value="validar" onclick="validar5()" />
+            <br />
+            <br />
+            <label for="">Código de uma disciplina do IFTM (versão 4):</label>
+            <input type="text" id="txtCod4" value="MT-12.333-IFTM Uberlândia" />
+            <input type="button" value="validar" onclick="validar6()" />
+            <br />
+            <br />
+            <label for="">Nome de campus do IFTM:</label>
+            <input type="text" id="txtNome" value="IFTM campus Uberlândia" />
+            <input type="button" value="validar" onclick="validar7()" />
+            <br />
+            <br />
+            <label for="">Telefone:</label>
+            <input
+                type="text"
+                id="txtTel"
+                value="+55(99)11111-2222"
+                onkeypress="inserirMascara('txtTel','+999(99)99999-9999')"
+            />
+            <input type="button" value="validar" onclick="validar8()" />
+            <br />
+            <br />
+            <label for="">Telefone (versão 2):</label>
+            <input type="text" id="txtTel2" value="(99)11111-2222" />
+            <input type="button" value="validar" onclick="validar9()" />
+            <br />
+            <br />
+            <label for="">Altura de uma pessoa:</label>
+            <input type="text" id="txtAltura" value="1,3" />
+            <input type="button" value="validar" onclick="validar10()" />
+            <br />
+            <br />
+            <label for="">Faturamento anual de uma empresa:</label>
+            <input
+                type="text"
+                id="txtFaturamento"
+                value="R$999.999.999.999,99"
+            />
+            <input type="button" value="validar" onclick="validar11()" />
+            <br />
+            <br />
+            <label for="">Cronômetro:</label>
+            <input
+                type="text"
+                id="txtCronometro"
+                value="23:59:59:99"
+                onkeypress="inserirMascara('txtCronometro','99:99:99:99')"
+            />
+            <input type="button" value="validar" onclick="validar12()" />
+            <br />
+            <br />
+            <label for="">Senha:</label>
+            <input
+                type="text"
+                id="txtSenha"
+                value="321a.&apMb.aei.Ab0-asf+_,/*.cq"
+            />
+            <input type="button" value="validar" onclick="validar13()" />
+            <br />
+            <br />
+        </form>
+    </body>
+</html>

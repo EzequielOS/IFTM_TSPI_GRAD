@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="Author" content="Ezequiel de Oliveira">
+<meta name="Description" content="Js Basico">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="utf-8">
+<title></title>
+<script type="text/javascript">
+	firstName = prompt("Qual o seu primeiro Nome?", "Ezequiel");
+	lastName = prompt("Qual o seu ultimo Nome?", "Oliveira");
+	n = prompt("Quantas vezes quer ver seu nome?", 5);
+	Number(n);
+	color = prompt("Qual a cor? Em Ingles", "Red");
+	for (i = 1; i <= n; i++) {
+		if (i % 2 != 0) {
+			document.write(`<p style="color: ${color};"> ${i} ${firstName}  ${lastName}</p>`);
+		} else{
+			document.write(`<p> ${i} ${firstName}  ${lastName}</p>`);
+		}
+	}
+</script>
+</head>
+<body>
+</body>
+</html>

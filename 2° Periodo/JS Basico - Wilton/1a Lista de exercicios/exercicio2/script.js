@@ -1,0 +1,1 @@
+window.alert('Pressione "OK" para ver o nome da disciplina.');

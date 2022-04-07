@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="Author" content="Ezequiel de Oliveira">
+<meta name="Description" content="Js Basico">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="utf-8">
+<title></title>
+<style type="text/css">
+	.boxInterna {
+		border: 1px solid black;
+		width: 150px;	
+		text-align: center;
+		float: left;
+	}
+</style>
+<script type="text/javascript">
+	function adicionar(){
+		//PASSO 1: Adicionar novos paragrafos a pagina
+	 	texto = document.getElementById("txtNome").value;
+		
+		parag = document.createElement("p");
+		parag.innerHTML = texto; 
+		
+		
+		
+		//PASSO 2 Adicionar novas imagem a uma pagina
+	 	img = document.createElement("img");
+		img.setAttribute("src", "img/stick.png");
+		img.setAttribute("name", texto);
+		img.addEventListener("click", function() {
+			alert(this.name)});
+		
+		//PASSO 3 Criar uma caixa para IMG + PARAGRAFO
+		div = document.createElement("div");
+		div.setAttribute("class", "boxInterna");
+		div.appendChild(img);
+		div.appendChild(parag);
+		
+		document.getElementById("box").appendChild(div);
+	
+		
+	}
+</script>
+</head>
+<body>
+	<form>
+		<label for="">Nome:</label>
+		<input type="text" id="txtNome">
+		<input type="button" value="Adicionar" onclick="adicionar()">
+	</form>
+	<div id="box">
+	</div>
+</body>
+</html>

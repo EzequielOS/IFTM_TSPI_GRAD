@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="Author" content="Ezequiel de Oliveira">
+<meta name="Description" content="Js Basico">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="utf-8">
+<title>Itapemirim</title>
+<style>
+.boxMain {
+	display: flex;
+	justify-content: center;
+}
+
+.boxImg {
+	margin-left: 5%;
+}
+
+.boxForm {
+	margin-right: 5%;
+}
+</style>
+<script src="./script/script.js"></script>
+
+</head>
+<body onload="play()">
+	<div class="boxMain">
+		<div class="boxForm">
+			<h1>Cadastro de Passageiros</h1>
+			<form>
+				<label for="txtNome">Nome:</label> <br> <input type="text"
+					id="txtNome" maxlength="20"> <br> <label
+					for="txtIdade">Idade:</label> <br> <input type="text"
+					id="txtIdade" maxlength="2"> <br> <label for="">Sexo:</label><br>
+				<select name="sexo" id="sexo">
+					<option value="masculino">Masculino</option>
+					<option value="feminino">Feminino</option>
+				</select> <br> <br> <input type="button" value="Cadastrar"
+					onclick="validaNome()"> <input type="reset" value="Limpar"
+					onclick=" "> <input type="button"
+					value="Visualizar Passageiros" onclick="window.open('menu.html')">
+			</form>
+
+		</div>
+		<div class="boxImg">
+			<img alt="" id="slideShow" src="imagens/onibus1.JPG" onmouseenter="pause()" onmouseout="play()">
+		</div>
+	</div>
+</body>
+</html>

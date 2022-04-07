@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            nota1 = prompt("Qual é a nota do 1º Bimestre?");
+            if (isNaN(nota1))
+                alert(
+                    "O programa será finalizado. Não foi informado o primeiro valor"
+                );
+            else {
+                nota2 = prompt("Qual é a nota do 2º Bimestre?");
+                if (isNaN(nota2))
+                    alert(
+                        "O programa será finalizado. Não foi informado o segundo valor"
+                    );
+                else {
+                    if (nota2 != null || nota1 != null) {
+                        if (nota1 == "")
+                            alert("Digite o valor da primeira nota!");
+                        if (nota2 == "")
+                            alert("Digite o valor da segunda nota!");
+                        var media = Number(nota1) + Number(nota2);
+                        if (media >= 60) alert("Aprovado!");
+                        else x = Math.abs(media - 60);
+                        alert(`Reprovado, falta(m) ${x} pontos.`);
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body></body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="Author" content="Ezequiel de Oliveira">
+<meta name="Description" content="Js Basico">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="utf-8">
+<title></title>
+<script type="text/javascript">
+	var data = new Date();
+	var diaSem = data.getDay();
+	
+	switch(diaSem){
+	case 6:
+		document.write(`<h1> Hoje é Sabado</h1>`);
+		break;
+	case 5:
+		document.write(`<h1> Hoje é Sexta-Feira</h1>`);
+		break;
+	case 4:
+		document.write(`<h1> Hoje é Quinta-Feira</h1>`);
+		break;
+	case 3:
+		document.write(`<h1> Hoje é Quarta-Feira</h1>`);
+		break;
+	case 2:
+		document.write(`<h1> Hoje é Terça-Feira</h1>`);
+		break;
+	case 1:
+		document.write(`<h1> Hoje é Segunda-Feira</h1>`);
+		break;
+	case 0: 
+		document.write(`<h1> Hoje é Domingo</h1>`);
+	}
+</script>
+</head>
+<body>
+</body>
+</html>

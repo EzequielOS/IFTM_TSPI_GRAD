@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            function mostrarNome() {
+                nome = document.getElementById("txtNome").value;
+                alert(nome);
+            }
+            function mostrarIdade() {
+                idade = document.getElementById("txtIdade").value;
+                alert(idade);
+            }
+        </script>
+    </head>
+    <body>
+        <label for="txtNome">Nome:</label>
+        <input type="text" id="txtNome" />
+        <input type="button" value="Conferir" onclick="mostrarNome()" />
+
+        <label for="txtIdade">Idade:</label>
+        <input type="text" id="txtIdade" />
+        <input type="button" value="Conferir" onclick="mostrarIdade()" />
+    </body>
+</html>

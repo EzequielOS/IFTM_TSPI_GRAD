@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>TAMAGOTCHI</title>
+        <style>
+            * {
+                box-sizing: border-box;
+                padding: 0px;
+                margin: 0px;
+            }
+            .boxBoy {
+                width: 150px;
+                height: 200px;
+                margin: auto;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                margin-top: -100px;
+                margin-left: -75px;
+            }
+            .boxBoy p {
+                text-align: center;
+            }
+            h3 {
+                padding-bottom: 15px;
+                align-items: center;
+            }
+        </style>
+        <script>
+            function changeBoy(nameImg, msg) {
+                document.getElementById("imgBoy").src = `img/${nameImg}.png`;
+                if (nameImg == "alegre") {
+                    nome = localStorage.getItem("name");
+                    msg = `${nome}, você quer brincar?`;
+                }
+                document.getElementById("txtBoy").innerHTML = msg;
+            }
+        </script>
+    </head>
+    <body>
+        <div>
+            <div class="boxBoy">
+                <div>
+                    <h3>TAMAGOTCHI</h3>
+                </div>
+                <img
+                    id="imgBoy"
+                    src="img/pensativo.png"
+                    alt="Desenho de um rosto pensativo"
+                    height="169"
+                    width="145"
+                    onmouseenter="changeBoy('assustado', 'O que você quer?')"
+                    onmousedown="changeBoy('nervoso', 'Não me aperte!!!')"
+                    onmouseup="changeBoy('alegre', '')"
+                    onmouseout="changeBoy('pensativo', 'zzzzzzzzzz!!!')"
+                />
+                <p id="txtBoy">zzzzzzzzzz!!!</p>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            * {
+                box-sizing: border-box;
+                padding: 0px;
+                margin: 0px;
+            }
+
+            .boxBoy {
+                width: 200px;
+                height: 300px;
+                margin: auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .boxBoy2 {
+                margin: 5px;
+                padding: 20px;
+                border: 2px solid black;
+                background-color: rgb(125, 196, 20);
+            }
+
+            .boxBoy p {
+                text-align: center;
+            }
+
+            h3 {
+                text-align: center;
+                color: red;
+                margin-top: 40px;
+            }
+
+            p {
+                font-size: 18px;
+                font-weight: bold;
+            }
+        </style>
+        <script>
+            function changeColor() {
+                document.getElementById("box1").style.backgroundColor = "blue";
+            }
+            function changeColorW() {
+                document.getElementById("box1").style.backgroundColor =
+                    "rgb(125, 196, 20)";
+            }
+            function changeColor1() {
+                document.getElementById("box2").style.backgroundColor = "blue";
+            }
+            function changeColorW1() {
+                document.getElementById("box2").style.backgroundColor =
+                    "rgb(125, 196, 20)";
+            }
+            function changeColor2() {
+                document.getElementById("box3").style.backgroundColor = "blue";
+            }
+            function changeColorW2() {
+                document.getElementById("box3").style.backgroundColor =
+                    "rgb(125, 196, 20)";
+            }
+            function changeColor3() {
+                document.getElementById("box4").style.backgroundColor = "blue";
+            }
+            function changeColorW3() {
+                document.getElementById("box4").style.backgroundColor =
+                    "rgb(125, 196, 20)";
+            }
+            var click = 0;
+            var click1 = 0;
+            var click2 = 0;
+            var click3 = 0;
+            function contador() {
+                click += 1;
+                document.getElementById("contador").innerHTML = click;
+            }
+            function contador1() {
+                click1 += 1;
+                document.getElementById("contador1").innerHTML = click1;
+            }
+            function contador2() {
+                click2 += 1;
+                document.getElementById("contador2").innerHTML = click2;
+            }
+            function contador3() {
+                click3 += 1;
+                document.getElementById("contador3").innerHTML = click3;
+            }
+        </script>
+    </head>
+
+    <body>
+        <div class="boxBoy">
+            <div>
+                <h3>CANDIDATO 1</h3>
+                <div
+                    class="boxBoy2"
+                    id="box1"
+                    onmouseover="changeColor()"
+                    onmouseleave="changeColorW()"
+                    onclick="contador()"
+                >
+                    <p>Mickey</p>
+                    <img
+                        id="imgBoy"
+                        src="img/candidato1.jpg"
+                        alt="Desenho de um rosto pensativo"
+                        height="169"
+                        width="145"
+                    />
+                    <p>Número de votos: <span id="contador">0</span></p>
+                </div>
+            </div>
+            <div>
+                <h3>CANDIDATO 2</h3>
+                <div
+                    class="boxBoy2"
+                    id="box2"
+                    onmouseover="changeColor1()"
+                    onmouseleave="changeColorW1()"
+                    onclick="contador1()"
+                >
+                    <p>Minnie</p>
+                    <img
+                        id="imgBoy"
+                        src="img/candidato2.jpg"
+                        alt="Desenho de um rosto pensativo"
+                        height="169"
+                        width="145"
+                    />
+                    <p>Número de votos: <span id="contador1">0</span></p>
+                </div>
+            </div>
+            <div>
+                <h3>CANDIDATO 3</h3>
+                <div
+                    class="boxBoy2"
+                    id="box3"
+                    onmouseover="changeColor2()"
+                    onmouseleave="changeColorW2()"
+                    onclick="contador2()"
+                >
+                    <p>Pateta</p>
+                    <img
+                        id="imgBoy"
+                        src="img/candidato3.jpg"
+                        alt="Desenho de um rosto pensativo"
+                        height="169"
+                        width="145"
+                    />
+                    <p>Número de votos: <span id="contador2">0</span></p>
+                </div>
+            </div>
+            <div>
+                <h3>CANDIDATO 4</h3>
+                <div
+                    class="boxBoy2"
+                    id="box4"
+                    onmouseover="changeColor3()"
+                    onmouseleave="changeColorW3()"
+                    onclick="contador3()"
+                >
+                    <p>Pluto</p>
+                    <img
+                        id="imgBoy"
+                        src="img/candidato4.jpg"
+                        alt="Desenho de um rosto pensativo"
+                        height="169"
+                        width="145"
+                    />
+                    <p>Número de votos: <span id="contador3">0</span></p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="style.css" />
+        <script type="text/javascript" src="script.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Acesso ao Sistema</h1>
+            <form action="" id="resetar">
+                <div>
+                    <div class="input">
+                        <div>
+                            <label for="valor1">Login:</label>
+                            <input
+                                style="width: 270px"
+                                type="text"
+                                id="valor1"
+                            />
+                        </div>
+                    </div>
+                    <div class="input">
+                        <div>
+                            <label for="valor2">Senha:</label>
+                            <input
+                                style="width: 170px"
+                                type="password"
+                                id="valor2"
+                                maxlength="8"
+                                required
+                            />
+                        </div>
+                        <div><p>(max. 8 caracteres)</p></div>
+                    </div>
+                    <div class="input">
+                        <div>
+                            <label style="margin-left: -70px" for="valor3"
+                                >Confirmar Senha:</label
+                            >
+                            <input
+                                style="width: 170px"
+                                type="password"
+                                id="valor3"
+                                maxlength="8"
+                                required
+                            />
+                        </div>
+                        <div><p>(max. 8 caracteres)</p></div>
+                    </div>
+                </div>
+                <div class="button">
+                    <div>
+                        <input
+                            type="button"
+                            value="Entrar"
+                            onclick="entrar()"
+                        />
+                    </div>
+                    <div>
+                        <input type="reset" value="Limpar" />
+                    </div>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

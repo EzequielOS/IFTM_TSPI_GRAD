@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="Author" content="Ezequiel de Oliveira">
+<meta name="Description" content="Js Basico">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="utf-8">
+<title></title>
+<script type="text/javascript">
+	var cron1;
+	
+	function configStatusBtns(statusBtnPlay, statusBtnPause, statusBtnStop) {
+        document.getElementById("btnPlay").disabled = statusBtnPlay;
+        document.getElementById("btnPause").disabled = statusBtnPause;
+        document.getElementById("btnStop").disabled = statusBtnStop;
+    }
+	
+	function play(){
+		cron1 = setInterval("increment()", 1000);
+		configStatusBtns(true, false, false);
+		/* 
+		document.getElementById("btnPlay").disabled = true;
+		document.getElementById("btnPause").disabled = false;
+		document.getElementById("btnStop").disabled = false; */
+		
+		
+	}
+	
+	function pause(){
+		clearInterval(cron1);
+		configStatusBtns(false, true, false);
+/* 		document.getElementById("btnPlay").disabled = false;
+		document.getElementById("btnPause").disabled = true;
+		document.getElementById("btnStop").disabled = false;
+ */	}
+	
+	function stop(){	
+		pause();
+		
+		if(confirm("Deseja STOPAR o cronometro?")){
+			document.getElementById("cont").innerHTML = 0;
+			configStatusBtns(false, true, true);
+
+	/* 		document.getElementById("btnPlay").disabled = false;
+			document.getElementById("btnPause").disabled = true;
+			document.getElementById("btnStop").disabled = true; */
+		} else {
+			play();
+		}
+	}
+	
+	function increment(){
+		document.getElementById("cont").innerHTML = parseInt(document.getElementById("cont").innerHTML)+ 1;
+// 		document.getElementById("cont").innerHTML++;
+	}
+
+</script>
+</head>
+<body>
+<form>
+	 <input type="button" id="btnPlay" value="Incrementar" onclick="play()">
+	 <input type="button" id="btnPause" value="Pause" onclick="pause()" disabled>
+	 <input type="button" id="btnStop" value="Stop" onclick="stop()" disabled>
+</form>
+<h1>Contador: <span id="cont">0</span></h1>
+</body>
+</html>

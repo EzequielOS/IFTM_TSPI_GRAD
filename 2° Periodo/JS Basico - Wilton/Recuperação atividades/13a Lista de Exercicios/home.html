@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Estoque - Cadastro de novos produtos</title>
+<style>
+main form {
+	padding: 10px;
+	margin: auto;
+	width: 28%;
+	background-color: rgb(213, 97, 100);
+	border-radius: 10px;
+	color: white;
+}
+
+main h1 {
+	color: rgb(213, 97, 100);
+	text-align: center;
+	margin-bottom: 0px;
+}
+
+form input[type="button"] {
+	display: inline;
+	margin: auto;
+	border-radius: 5px;
+	background-color: black;
+	color: white;
+	border: none;
+	margin-top: 10px;
+	padding: 5px;
+	height: 25px;
+	width: 100px;
+}
+
+
+header {
+	text-align: right;
+	margin-right: 300px;
+}
+
+header p {
+	margin-right: -120px;
+	margin-top: -20px;
+}
+ .textos{
+		padding-bottom: 25px;
+        }
+ .labelInput{
+ 		 display: inline;
+ 		 padding: 0px;
+		 margin-right: 0px;
+		 margin-left: 20%;
+        }
+ .labelInput2{
+ 		 display: inline;
+ 		 padding: 0px;
+		 margin-right: 0px;
+		 margin-left: 18%;
+        }
+.btns{
+            margin: auto;
+            text-align: center;
+        }
+
+</style>
+<script src="./script/script.js"></script>
+</head>
+<body>
+	<header>
+		<img src="./img/carrinhoCompras.png"
+			alt="Imagem de um carrinho de compras">
+		<p>
+			Items no estoque: <span id="total"></span>
+		</p>
+	</header>
+	<main>
+		<h1>Cadastro de novos produtos</h1>
+			<form action="">
+			<div class="textos">
+			<div class="labelInput">
+					<label for="txtNomeProd">Nome do produto:</label> 
+					<input type="text" id="txtNomeProd" value="">
+					<br>
+					<br>
+			</div>
+				<div class="labelInput2">
+					<label for="txtCodProd">Código do produto:</label> 
+					<input type="text" id="txtCodProd" value="">
+					<br>
+					</div>
+				</div>
+					<label for="txtQtd">Quantidade do produto: </label> 
+					<select id="txtQtd">
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">10</option>
+					</select>
+					<br>
+					<br>
+					<div class="btns">
+					<input type="button" value="Cadastrar" onclick="valida()">
+					<input type="button" value="Ver estoque" onclick="abreEstoque()">
+					<input type="button" value="Limpar" onclick="limpa()">
+					</div>
+			</form>
+	</main>
+
+</body>
+</html>

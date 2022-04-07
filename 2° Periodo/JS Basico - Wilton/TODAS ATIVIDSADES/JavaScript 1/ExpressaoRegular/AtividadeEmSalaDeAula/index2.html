@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .boxInterna {
+                border: 1px solid black;
+                width: 150px;
+                text-align: center;
+                float: left;
+                margin: 5px;
+            }
+        </style>
+        <script>
+            function adicionar() {
+                texto = document.getElementById("txtNome").value;
+
+                // Adicionar novos parágrafos a uma pagina!
+                p = document.createElement("p"); // Criando um novo <p></p>
+                p.innerHTML = texto;
+
+                //Adicionar novas Imagens!
+                img = document.createElement("img");
+                img.setAttribute("src", "stick.png");
+
+                //Passo 3: Criar uma caixapara adicionar IMG + Parágrafo!
+                div = document.createElement("div");
+                div.setAttribute("class", "boxInterna");
+                div.appendChild(img);
+                div.appendChild(p);
+
+                document.getElementById("box").appendChild(div);
+
+                //PASSO 4: Clicar na imagem
+                img.setAttribute("name", texto);
+                img.addEventListener("click", function () {
+                    alert(this.name);
+                });
+            }
+        </script>
+    </head>
+    <body>
+        <form action="">
+            <label for="">Nome:</label>
+            <input type="text" id="txtNome" />
+            <input type="button" value="Adicionar" onclick="adicionar()" />
+        </form>
+        <div id="box"></div>
+    </body>
+</html>

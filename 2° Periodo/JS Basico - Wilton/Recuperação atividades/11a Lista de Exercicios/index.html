@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="Author" content="Ezequiel de Oliveira">
+<meta name="Description" content="Js Basico">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="utf-8">
+<title>Document</title>
+<script src="script/script.js"></script>
+<style>
+.btn {
+	color: darkgoldenrod;
+	margin: auto;
+	margin-top: 10px;
+	width: 50%;
+	padding: 5px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.container {
+	color: darkgoldenrod;
+	background-color: rgb(255, 255, 255, 0.7);
+	border: 8px dashed orange;
+	width: 30%;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 20px 30px;
+	margin-top: 10%;
+	border-radius: 50px;
+	text-align: center;
+}
+
+label, input {
+	margin: auto;
+	margin-top: 5px;
+	display: block;
+	width: 60%;
+}
+</style>
+</head>
+<body>
+	<div class="container">
+		<h1>Tela de cadastro</h1>
+		<form action="">
+				<label for="txtNome">Nome Completo</label> 
+				<input type="text" name="" id="txtNome" /> 
+				
+				<label for="txtRa">RA</label> 
+				<input type="text" name="" id="txtRa" /> 
+				
+				<label for="txtNota1">Nota do primeiro bimestre</label> 
+				<input type="text" name="" id="txtNota1" />
+			
+				<label for="txtNota2">Nota do segundo bimestre</label> 
+				<input type="text" name="" id="txtNota2" />
+				<input type="submit" value="Cadastrar" class="btn" onclick="cadastrar()" />
+		</form>
+		<br/><br/> <a href="listar.html">Ver alunos cadastrados!</a>
+	</div>
+</body>
+</html>

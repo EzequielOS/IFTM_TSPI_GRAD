@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="Author" content="Ezequiel de Oliveira">
+<meta name="Description" content="Js Basico">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="utf-8">
+<title>Jogo Tamagochi</title>
+<style type="text/css">
+* {
+	box-sizing: border-box;
+	padding: 0px;
+	margin: 0px;
+}
+
+body {
+	background-image: url('./images/ex001/BG.png');
+}
+
+h1 {
+	background-color: rgb(255, 255, 255, 0.7);
+	color: darkgoldenrod;
+}
+.btn {
+	color: darkgoldenrod;
+	margin: auto;
+	margin-top: 10px;
+	width: 50%;
+	padding: 5px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+.boxBoy {
+	background-color: rgb(255, 255, 255, 0.7);
+	background-color: rgb(255, 255, 255, 0.7);
+	width: 30%;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 20px 30px;
+	margin-top: 15%;
+	border-radius: 50px;
+	text-align: center;
+}
+
+.boxBoy p {
+	text-align: center;
+}
+</style>
+<script type="text/javascript">
+	/*function changeBoy() {
+		imagem = document.getElementById("imgBoy").src = "images/ex001/assustado.png";
+		document.getElementById("txtBoy").innerHTML = "O que você quer?";
+	}
+	function changeBoy2(){
+		imagem = document.getElementById("imgBoy").src = "images/ex001/nervoso.png";
+		document.getElementById("txtBoy").innerHTML = "Não me aperte?";
+	}
+	function changeBoy3(){
+		nome = prompt('Seu nome:');
+		imagem = document.getElementById("imgBoy").src = "images/ex001/alegre.png";
+		document.getElementById("txtBoy").innerHTML = `${nome} Vamos Brincar?`;
+	}*/
+
+	function changeBoy(nameImg, msg) {
+		document.getElementById("imgBoy").src = `images/ex001/${nameImg}.png`;
+		if (nameImg == "alegre") {
+			nome = prompt("Qual e teu nome?");
+			msg = `${nome}, Voce quer brincar?`;
+		}
+		document.getElementById("txtBoy").innerHTML = msg;
+	}
+	
+	 function sair(){
+         if(prompt("Deseja realmente sair? (Digite 'sim')").toUpperCase() == 'SIM'){
+             window.open("index.html","_self");
+         }
+     }
+</script>
+</head>
+<body>
+	<h1 align="center">Jogo Tamagochi</h1>
+	<div class="boxBoy">
+		<img id="imgBoy" src="images/ex001/pensativo.png"
+			alt="Desenho de um rosto pensativo" height="169" width="145"
+			onmouseenter="changeBoy('assustado', 'O que voce quer?')"
+			onmousedown="changeBoy('nervoso', 'Nao aperta!')"
+			onmouseup="changeBoy('alegre', '')"
+			onmouseout="changeBoy('pensativo', 'zzzzzzzzzz!!!')" />
+		<p id="txtBoy">zzzzzzzzzz!!!</p>
+		<form action="">
+			<input type="button" class="btn" value="Sair" onclick="sair()">
+		</form>
+	</div>
+</body>
+</html>

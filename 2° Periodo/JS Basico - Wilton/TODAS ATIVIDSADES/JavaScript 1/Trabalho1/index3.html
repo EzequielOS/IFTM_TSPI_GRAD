@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            nome = prompt("Qual é o seu nome completo?");
+            idade = prompt("Qual é a sua idade?");
+            if (nome != null) {
+                if (nome == "") alert("Nenhum nome foi informado.");
+            }
+            if (idade != null) {
+                if (idade == "") alert("Nenhuma idade foi informada.");
+                else if (idade >= 18)
+                    alert(`${nome}, você já POSSUI idade para tirar carteira!`);
+                else x = Math.abs(idade - 18);
+                alert(
+                    `${nome}, você ainda NÃO POSSUI idade para tirar carteira, ainda falta(m) ${x} anos.`
+                );
+            }
+        </script>
+    </head>
+    <body></body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="js/functions.js"></script>
+        <style>
+            body {
+                display: flexbox;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                width: 200px;
+                margin: auto;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h2>Tela de cadastro</h2>
+        <div>
+            <form action="">
+                <label for="txtNome">Nome Completo</label>
+                <input type="text" name="" id="txtNome" />
+                <br />
+                <br />
+                <label for="txtRa">RA</label>
+                <input type="number" name="" id="txtRa" />
+                <br />
+                <br />
+                <label for="txtNota1">Nota do primeiro bimestre</label>
+                <input type="number" name="" id="txtNota1" />
+                <br />
+                <br />
+                <label for="txtNota2">Nota do segundo bimestre</label>
+                <input type="number" name="" id="txtNota2" />
+                <br />
+                <br />
+                <input type="submit" value="Cadastrar" onclick="cadastrar()" />
+            </form>
+        </div>
+        <br />
+        <br />
+        <a href="listar.html">Ver alunos cadastrados!</a>
+    </body>
+</html>

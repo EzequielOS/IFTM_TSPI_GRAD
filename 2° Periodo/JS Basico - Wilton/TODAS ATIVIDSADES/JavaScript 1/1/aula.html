@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            nome = prompt("Escreva um texto com várias frases:");
+            // nome = "wilton de paula filho";
+            // frase = "DEUS é perfeito. Amo a natureza. JS é top demais.";
+            vet_palavras = nome.split("."); //["wilton","de","paula","filho"]
+            for (i = 0; i < vet_palavras.length; i++)
+                document.write(`<p>${vet_palavras[i]}</p>`);
+        </script>
+    </head>
+    <body></body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Cadastro</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="css/style.css" />
+
+        <script>
+            var login = [];
+            var senha = [];
+            var nome = [];
+            function validar() {
+                var currentLogin = document.getElementById("txt1").value;
+                var currentSenha = document.getElementById("txt2").value;
+                var currentNome = document.getElementById("txt3").value;
+
+                el = document.getElementById("msg");
+                el.classList.remove("text-success", "text-danger");
+                el.classList.add("text-warning");
+
+                if (
+                    currentLogin == "" ||
+                    currentSenha == "" ||
+                    currentNome == ""
+                ) {
+                    msg = "Todos os campos devem ser preenchidos.";
+                    document.getElementById("msg").innerHTML = msg;
+                } else {
+                    busca = "@";
+                    retorno = currentLogin.indexOf(busca);
+                    retorno2 = currentSenha.length;
+                    if (retorno == -1 || retorno2 < 5) {
+                        if (retorno == -1) {
+                            msg = "O seu Login deve ser um e-mail!";
+                            document.getElementById("msg").innerHTML = msg;
+                        } else {
+                            msg =
+                                "O seu senha deve conter no minimo 5 caracteres!";
+                            document.getElementById("msg").innerHTML = msg;
+                        }
+                    } else {
+                        if (login.indexOf(currentLogin) > -1) {
+                            msg = "O login já existe!";
+                            document.getElementById("msg").innerHTML = msg;
+                        } else {
+                            el = document.getElementById("msg");
+                            el.classList.remove("text-warning");
+                            el.classList.add("text-success");
+                            msg = "Cadastro efetuado com sucesso!";
+                            document.getElementById("msg").innerHTML = msg;
+                            login.push(currentLogin);
+                            senha.push(currentSenha);
+                            nome.push(currentNome);
+                            localStorage.setItem("login", login);
+                            localStorage.setItem("senha", senha);
+                            localStorage.setItem("nome", nome);
+                        }
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div>
+            <fieldset>
+                <h1>Tela de Cadastro</h1>
+                <div id="msg" class="text-warning">
+                    <p class="p-1"></p>
+                </div>
+                <form action="">
+                    <div>
+                        <label for="txt1">Login:</label>
+                        <input type="text" id="txt1" />
+                    </div>
+                    <div>
+                        <label for="txt2">Password:</label>
+                        <input type="password" id="txt2" />
+                    </div>
+                    <div>
+                        <label for="txt3">Nome:</label>
+                        <input type="text" id="txt3" />
+                    </div>
+                    <div>
+                        <div class="botao">
+                            <input
+                                type="button"
+                                class="btn btn-success"
+                                value="Cadastrar"
+                                onclick="validar()"
+                            />
+                        </div>
+                        <div>
+                            <input
+                                type="reset"
+                                class="btn btn-primary"
+                                value="Limpar"
+                            />
+                        </div>
+                    </div>
+                    <div>
+                        <a href="/index.html" style="color: bisque"
+                            >Fazer Login!</a
+                        >
+                    </div>
+                </form>
+            </fieldset>
+        </div>
+    </body>
+</html>

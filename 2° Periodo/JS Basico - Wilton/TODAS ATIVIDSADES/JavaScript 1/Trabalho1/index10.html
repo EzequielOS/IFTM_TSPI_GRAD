@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            x = prompt("Numero de vezes!");
+            if (x == "") {
+                alert("Digite um valor!");
+            }
+            if (x > 0) {
+                nome = prompt("Qual e o seu nome completo?");
+                if (nome != null) {
+                    alert("Digite um nome!");
+                } else {
+                    for (i = 0; i < x; i++) {
+                        document.write(`<p>${nome}</p>`);
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body></body>
+</html>

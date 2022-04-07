@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Formulario de cadastro</title>
+        <style>
+            body {
+                background-color: #d5feff;
+                margin: 0px;
+            }
+            form {
+                width: 700px;
+                margin: auto;
+                border: 1px solid black;
+                border-radius: 10px;
+                background-color: #4169e1;
+                box-shadow: 5px 5px 5px 0px #000000;
+            }
+            .container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            div {
+                padding: 10px;
+            }
+            .botoes {
+                display: flex;
+                justify-content: center;
+            }
+            .botoes input {
+                padding: 10px;
+                margin: 15px;
+                border: 2px solid grey;
+                color: #27408b;
+            }
+            .principal input {
+                width: 400px;
+                display: block;
+                border: 2px solid grey;
+            }
+            .sexo {
+                text-align: center;
+            }
+            .sexo input {
+                margin: 15px;
+            }
+            label {
+                color: #d5feff;
+                font-size: 20px;
+            }
+            p {
+                color: #d5feff;
+                font-size: 20px;
+                text-align: center;
+            }
+            h1 {
+                color: #d5feff;
+            }
+            textarea {
+                width: 420px;
+                border: 2px solid grey;
+                display: block;
+                resize: none;
+            }
+            .nasc input {
+                width: 150px;
+            }
+        </style>
+        <script>
+            function verificar() {
+                vet_inputs = document.getElementsByTagName("input");
+                a = document.getElementById("estado").value;
+                b = document.getElementById("texto").value;
+                for (i = 0; i < vet_inputs.length; i++)
+                    if (
+                        (vet_inputs[i].type == "text" &&
+                            vet_inputs[i].value == "") ||
+                        (vet_inputs[i].type == "email" &&
+                            vet_inputs[i].value == "") ||
+                        (vet_inputs[i].type == "tel" &&
+                            vet_inputs[i].value == "") ||
+                        (vet_inputs[i].type == "date" &&
+                            vet_inputs[i].value == "")
+                    ) {
+                        alert(`${vet_inputs[i].name} está vazio!!!`);
+                        break;
+                    } else if (a == "0" || a == null) {
+                        alert("Selecione o seu Estado de origem!");
+                        a.focus();
+                        break;
+                    } else if (b == "" || b == null) {
+                        alert("Informe alguma sugestão de melhoria!");
+                        b.focus();
+                        break;
+                    } else if (
+                        document.getElementById("sexoM").checked == false &&
+                        document.getElementById("sexoF").checked == false
+                    ) {
+                        alert(`Sexo está vazio!`);
+                        break;
+                    }
+            }
+        </script>
+    </head>
+    <body>
+        <main>
+            <form>
+                <div class="container">
+                    <div><h1>Cadastro de voluntários</h1></div>
+                    <div>
+                        <div class="principal">
+                            <div>
+                                <label for="txtNome">Nome:</label>
+                                <input type="text" id="txtNome" name="Nome" />
+                            </div>
+                            <div class="nasc">
+                                <label for="txtNasc">Data de Nascimento:</label>
+                                <input
+                                    type="date"
+                                    id="txtNasc"
+                                    name="Data de Nascimento"
+                                />
+                            </div>
+                            <div>
+                                <label for="txtEmail">E-mail:</label>
+                                <input
+                                    type="email"
+                                    id="txtEmail"
+                                    name="E-mail"
+                                />
+                            </div>
+
+                            <div>
+                                <label for="estado">Estado: </label>
+                                <select id="estado">
+                                    <option value="0">Selecione</option>
+                                    <option value="1">MG</option>
+                                    <option value="2">SP</option>
+                                    <option value="3">PA</option>
+                                    <option value="4">PR</option>
+                                    <option value="5">AM</option>
+                                    <option value="6">AP</option>
+                                    <option value="7">BA</option>
+                                    <option value="8">RS</option>
+                                    <option value="9">MT</option>
+                                    <option value="10">MS</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="txtCidade">Cidade:</label>
+                                <input
+                                    type="text"
+                                    id="txtCidade"
+                                    name="Cidade"
+                                />
+                            </div>
+                            <div>
+                                <label for="txtEndereco">Endereço:</label>
+                                <input
+                                    type="text"
+                                    id="txtEndereco"
+                                    name="Endereço"
+                                />
+                            </div>
+                            <div>
+                                <label for="txtTelefone">Telefone:</label>
+                                <input
+                                    type="tel"
+                                    id="txtTelefone"
+                                    name="Telefone"
+                                />
+                            </div>
+                        </div>
+                        <div class="sexo">
+                            <input
+                                type="radio"
+                                name="Sexo"
+                                id="sexoM"
+                                value="1"
+                            /><label for="sexoM">Masculino</label>
+                            <input
+                                type="radio"
+                                name="Sexo"
+                                id="sexoF"
+                                value="2"
+                            /><label for="sexoF">Feminino</label>
+                        </div>
+                        <div>
+                            <p>Sugestões:</p>
+                            <textarea
+                                name=""
+                                id="texto"
+                                cols="30"
+                                rows="5"
+                            ></textarea>
+                        </div>
+                        <div class="botoes">
+                            <input
+                                type="submit"
+                                value="Validar"
+                                onclick="verificar()"
+                            />
+                            <input type="reset" />
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </main>
+    </body>
+</html>

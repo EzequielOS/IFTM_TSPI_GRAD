@@ -1,0 +1,41 @@
+* {
+    box-sizing: border-box;
+}
+h1 {
+    color: bisque;
+    padding-top: 15px;
+}
+label {
+    color: bisque;
+    padding-right: 10px;
+}
+fieldset {
+    width: 400px;
+    border: none;
+    text-align: center;
+    background-color: rgb(71, 89, 146);
+    padding-bottom: 40px;
+    border-radius: 15px;
+}
+input[type="text"] {
+    outline: none;
+    width: 220px;
+    margin-bottom: 10px;
+    margin-left: 23px;
+}
+input[type="password"] {
+    outline: none;
+    width: 220px;
+    margin-bottom: 10px;
+}
+div {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
+.botao {
+    margin-right: 15px;
+}
+.msg {
+    font-weight: bold;
+}

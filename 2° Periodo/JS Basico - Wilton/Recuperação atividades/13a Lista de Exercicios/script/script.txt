@@ -1,0 +1,91 @@
+var total=0;
+
+function abreEstoque() {
+	window.open("./estoque.html");
+}
+
+function limpa() {
+	document.getElementById('txtNomeProd').value = '';
+	document.getElementById('txtCodProd').value = '';
+	document.getElementById('txtQtd').value = '1';
+}
+function valida() {
+	var nameProd = document.getElementById('txtNomeProd').value;
+	var codProd = document.getElementById('txtCodProd').value;
+	var qtd = document.getElementById('txtQtd').value;
+	localStorage.setItem("carrinho", total);
+	document.getElementById("total").innerHTML = localStorage.getItem("carrinho");
+
+
+	var padraoCodProd = /^([a-zA-Z]{2})-[0-9]{5,10}$/
+	var padraoNomeProd = /^([a-z\d ]{1,25})$/i;
+
+	if (nameProd != "") {
+		if (padraoNomeProd.test(nameProd) != false) {
+			if (codProd != "") {
+				if (padraoCodProd.test(codProd) != false) {
+					var confirma = confirm("Deseja cadastrar as informações deste produto?");
+					if (confirma == true) {
+						cad = { nome: nameProd, codigo: codProd, quantidade: parseInt(qtd) };
+						tabelaProd = JSON.parse(localStorage.getItem("tabelaProd"));
+						if (tabelaProd != null) {
+							for (i = 0; i < tabelaProd.produtos.length; i++) {
+								if (tabelaProd.produtos[i].nome == nameProd && tabelaProd.produtos[i].codigo == codProd) {
+									confirmaProd = confirm("Produto já cadastrado. Deseja adicionar itens desse produto?");
+									if (confirmaProd == true) {
+										tabelaProd.produtos[i].quantidade += parseInt(qtd);
+										localStorage.setItem("tabelaProd", JSON.stringify(tabelaProd));
+										total += parseInt(tabelaProd.produtos[i].quantidade);
+										limpa();
+									}
+
+								} else if (tabelaProd.produtos[i].nome == nameProd) {
+									alert("Esse NOME ja existe para um produto!");
+								} else if (tabelaProd.produtos[i].codigo == codProd) {
+									alert("Esse CODIGO ja existe para um produto!");
+								} else {
+									tabelaProd.produtos.push(cad);
+									localStorage.setItem("tabelaProd", JSON.stringify(tabelaProd));
+									alert("Produto cadastrado com sucesso!")
+									limpa();
+									break;
+								}
+							}
+						} else {
+							tabelaProd = { produtos: [cad] };
+							localStorage.setItem("tabelaProd", JSON.stringify(tabelaProd));
+							alert("Produto cadastrado com sucesso!")
+							limpa();
+						}
+					} else {
+						limpa();
+					}
+				} else {
+					alert("Codigo fora de padrão! (EX: AR-12345)");
+				}
+			} else {
+				alert("Codigo não pode ficar em branco!");
+			}
+		} else {
+			alert("Nome fora de padrão! (Somente letras e numeros. MAX 25)");
+		}
+	} else {
+		alert("Nome não pode ficar em branco!");
+	}
+}
+
+
+function imprimeEstoque() {
+	var cad = [];
+
+	cad = JSON.parse(localStorage.getItem("tabelaProd"));
+
+	if (cad == null) document.write("Não há produtos cadastrados!");
+	else {
+		for (i = 0; i < cad.produtos.length; i++) {
+			document.write(
+				`<h2>Item: ${cad.produtos[i].nome}</h2><ul><li>Código do produto: ${cad.produtos[i].codigo}</li><li>Quantidade no estoque: ${cad.produtos[i].quantidade}</li></ul>`
+			);
+		}
+	}
+}

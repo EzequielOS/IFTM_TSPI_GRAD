@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            div {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+            }
+        </style>
+        <script>
+            function mostrarNota(nota1, nota2) {
+                a = document.getElementById("nota1").value;
+                b = document.getElementById("nota2").value;
+                console.log(a, b);
+                media = Number(a) + Number(b);
+                if (a == "" && b == "") {
+                    alert("Valor invalido, digite as notas do aluno!");
+                } else {
+                    if (media >= 60) {
+                        alert(`Aprovado! Sua nota foi ${media}`);
+                    } else {
+                        alert(
+                            `Reprovou! Faltaram: ${(media - 60) * -1} pontos!`
+                        );
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div>
+            <label for="nota1">Nota 1:</label>
+            <input type="number" id="nota1" /><br />
+            <label for="nota2">Nota 2:</label>
+            <input type="number" id="nota2" /><br />
+
+            <input
+                type="button"
+                value="Resultado"
+                onclick="mostrarNota()"
+            /><br />
+        </div>
+    </body>
+</html>

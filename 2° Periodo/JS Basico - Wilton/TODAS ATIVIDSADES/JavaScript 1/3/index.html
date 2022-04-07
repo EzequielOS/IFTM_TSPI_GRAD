@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <script>
+        function verificar() {
+            // Obter todas os inputs do document
+            vet_inputs = document.getElementsByTagName("input");
+            for (i = 0; i < vet_inputs.length; i++)
+                if (vet_inputs[i].type == "text" && vet_inputs[i].value == "") {
+                    alert(`${vet_inputs[i].name} está vazio!!!`);
+                    break;
+                }
+        }
+    </script>
+    <body>
+        <form>
+            <label for="txtNome">Nome:</label>
+            <input type="text" id="txtNome" name="Nome" />
+
+            <br /><br />
+            <label for="txtEndereco">Endereço:</label>
+            <input type="text" id="txtEndereco" name="Endereço" />
+
+            <br /><br />
+            <input type="radio" name="sexo" id="sexoM" /><label for="sexoM"
+                >Masculino</label
+            >
+            <input type="radio" name="sexo" id="sexoF" /><label for="sexoF"
+                >Feminino</label
+            >
+            <br /><br />
+            <label for="estCivil">Estado Civil</label>
+            <select id="estCivil">
+                <option value="">Selecione</option>
+                <option value="">Casado</option>
+                <option value="">Solteiro</option>
+                <option value="">Divorciado</option>
+                <option value="">Viúvo</option>
+            </select>
+            <br /><br />
+
+            <p>Sugestoes:</p>
+            <textarea name="" id="" cols="30" rows="5"></textarea>
+            <br /><br />
+            <input type="submit" value="Validar" onclick="verificar()" />
+            <input type="reset" />
+        </form>
+    </body>
+</html>

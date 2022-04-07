@@ -1,0 +1,77 @@
+function cadastrar() {
+	nameUsr = document.getElementById("txtNome").value;
+	raUsr = document.getElementById("txtRa").value;
+	nota1 = document.getElementById("txtNota1").value;
+	nota2 = document.getElementById("txtNota2").value;
+
+	if (nameUsr != "" && raUsr != "" && nota1 != "" && nota2 != "") {
+		usr = {
+			nome: nameUsr,
+			ra: raUsr,
+			nota1: nota1,
+			nota2: nota2,
+		};
+
+		tabUsuarios = JSON.parse(localStorage.getItem("tabUsuarios"));
+		if (!tabUsuarios) tabUsuarios = { usuarios: [] };
+
+		tabUsuarios.usuarios.push(usr);
+		localStorage.setItem("tabUsuarios", JSON.stringify(tabUsuarios));
+
+		alert("Cadastrado com sucesso!");
+	} else {
+		alert("Você deve preencher todos os campos!");
+	}
+}
+
+function listar() {
+	var usr = [];
+	var soma = [];
+	var aprovados = [];
+
+	usr = JSON.parse(localStorage.getItem("tabUsuarios"));
+	if (usr == null) document.write("Não há alunos cadastrados!");
+	else
+		document.write(`<div class="container">`);
+		document.write(`<table border=1>
+                <tr>
+                    <th>Nome</th>
+                    <th>RA</th>
+                    <th>Nota 1º</th>
+                    <th>Nota 2º</th>
+                    <th>Total</th>
+                    <th>Situação</th>
+                </tr>`);
+	for (i = 0; i < usr.usuarios.length; i++) {
+		soma[i] =
+			parseFloat(usr.usuarios[i].nota1) +
+			parseFloat(usr.usuarios[i].nota2);
+
+		if (soma[i] >= 60) {
+			aprovados[i] = "Aprovado";
+		} else aprovados[i] = "Reprovado";
+		document.write(
+			`<tr>
+                    <td>
+                    ${usr.usuarios[i].nome}
+                    </td>
+                    <td>
+                    ${usr.usuarios[i].ra}
+                    </td>
+                    <td>
+                    ${usr.usuarios[i].nota1}
+                    </td>
+                    <td>
+                    ${usr.usuarios[i].nota2}
+                    </td>
+                    <td>
+                    ${soma[i]}
+                    </td>
+                    <td>
+                    ${aprovados[i]}
+                    </td>
+                </tr>`
+		);
+	}
+	document.write(`</table></div>`);
+}

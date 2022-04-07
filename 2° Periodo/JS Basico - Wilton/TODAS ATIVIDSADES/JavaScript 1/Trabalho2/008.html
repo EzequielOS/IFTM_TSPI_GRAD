@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            text = prompt(
+                "Digite um texto qualquer: ",
+                "amor paz deus amizade amanha tarde noite abril todo tudo"
+            );
+
+            palavras = text.split(" ");
+            palavras.sort();
+
+            for (i = 0; i < palavras.length; i++) {
+                palavra = palavras[i];
+                letra = palavra.charAt(0);
+                document.write(
+                    `<h2>Palavras iniciadas com a letra ${letra}:</h2>`
+                );
+                document.write(`${palavra} - `);
+                while (palavras[++i].charAt(0) == letra)
+                    document.write(`${palavras[i]} - `);
+                i--;
+            }
+        </script>
+    </head>
+    <body></body>
+</html>

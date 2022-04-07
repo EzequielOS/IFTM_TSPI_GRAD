@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            table {
+                border: 5px solid blue;
+                margin: auto;
+                width: 300px;
+                height: 200px;
+                border-radius: 35px;
+                padding: 15px;
+            }
+            td {
+                border: 2px solid black;
+                text-align: center;
+                padding: 20px;
+            }
+            h1 {
+                text-align: center;
+            }
+        </style>
+
+        <script>
+            var mulheres = ["Jane", "Ana", "Rose", "Bea"];
+            var homens = ["Tiao", "Leo", "Juca", "Perl"];
+
+            m = mulheres.sort();
+            h = homens.sort();
+
+            document.write(`<h1>Ônibus</h1>`);
+            document.write(
+                `<table><td style="background-color: black; height: 20px;"></td></tr><tr>`
+            );
+            for (var i in mulheres) {
+                document.write(`<td>${m[i]}</td>`);
+                document.write(`<td>${h[i]}</td></tr>`);
+            }
+            document.write(`</tr></table>`);
+        </script>
+    </head>
+    <body></body>
+</html>

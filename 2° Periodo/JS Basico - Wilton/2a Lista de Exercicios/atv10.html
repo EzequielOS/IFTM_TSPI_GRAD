@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="Author" content="Ezequiel de Oliveira">
+<meta name="Description" content="Js Basico">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="utf-8">
+<title></title>
+<script type="text/javascript">
+var content = "" 
+	nro = prompt("Quantas colunas?", 2)
+	for (var i = 0; i <= nro ; i++) { 
+	content += "<TR>" 
+	content += "<TD>" + i.toString(10) + "</TD>" 
+	content += "<TD>" + i.toString(16) + "</TD>" 
+	content += "<TD>" + i.toString(2) + "</TD></TR>" 
+	} 
+	document.write("<table><th>Decimal</th><th>Binário</th><th>Hexadecimal</th></tr>"+content+"</table>")
+
+	</script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="Author" content="Ezequiel de Oliveira">
+<meta name="Description" content="Js Basico">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="utf-8">
+<title>Rélogio Global</title>
+<style>
+.btn {
+	margin-left: 1.5em;
+	margin-left: 1.5em;
+}
+.container {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+</style>
+<script type="text/javascript">
+	var timer;
+	function brazilTime(){
+		const date = new Date();
+		document.getElementById("mapa").src = `images/brazil.jpg`;
+		document.getElementById("relogio").innerHTML = date.toLocaleString("pt-BR", {timeZone: "America/Sao_Paulo"});
+		clearInterval(timer);
+		timer = setInterval(brazilTime, 1000);
+	} 
+	function chinaTime(){
+		const date = new Date;
+		clearInterval(timer);
+		document.getElementById("mapa").src = `images/china.jpg`;
+		document.getElementById("relogio").innerHTML = date.toLocaleString("pt-BR", {timeZone: "Asia/Shanghai"});
+		timer = setInterval(chinaTime, 1000);
+	} 
+	function australiaTime(){
+		const date = new Date();
+		clearInterval(timer);
+		document.getElementById("mapa").src = `images/australia.jpg`;
+		document.getElementById("relogio").innerHTML = date.toLocaleString("pt-BR", {timeZone: "Australia/Sydney"});
+		timer = setInterval(australiaTime, 1000);
+	} 
+</script>
+</head>
+<body>
+	<h1 align="center">Relógio Mundial</h1>
+	<h1 id="relogio" align="center" style="color: darkslategray;"></h1>
+	<div class="container">
+		<img alt="Imagem do mapa mundi" id="mapa" src="images/mapaMundi.jpg" width="50%">
+	</div>
+	<div class="container">
+		<button class="btn" onclick="brazilTime()">Brazil</button>
+		<button class="btn" onclick="australiaTime()">Australia</button>
+		<button class="btn" onclick="chinaTime()">China</button>
+	</div>
+</body>
+</html>

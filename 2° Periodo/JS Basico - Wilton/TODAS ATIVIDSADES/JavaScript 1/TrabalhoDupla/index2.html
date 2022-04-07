@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <style>
+        body {
+            background-color: lightslategrey;
+        }
+        .div-1 {
+            padding: 8px 0px 8px 8px;
+        }
+        .div-2 {
+            border-bottom: 2px solid white;
+            width: 200px;
+            padding: 10px 0px 10px 0px;
+        }
+        button {
+            margin-top: 10px;
+        }
+    </style>
+    <script>
+        function tempo() {
+            setTimeout(function () {
+                alert("SEU TEMPO ACABOU!");
+            }, 6000);
+        }
+        function mostrar() {
+            document.getElementById("txt1").innerHTML = "Resposta: 63";
+            document.getElementById("txt2").innerHTML = "Resposta: 1221";
+            document.getElementById("txt3").innerHTML = "Resposta: 16";
+            document.getElementById("txt4").innerHTML = "Resposta: 275";
+        }
+    </script>
+    <body>
+        <div>
+            <h1>Bem vindo ao jogo de Matemática!</h1>
+            <h2>
+                Você terá alguns segundos para marcar as respostas, selecione as
+                opçôes corretas!
+            </h2>
+            <div>
+                <div class="div-2">
+                    <p>9 * 7</p>
+
+                    <input type="checkbox" id="1" />
+                    <label for="1">63</label>
+                    <input type="checkbox" id="2" />
+                    <label for="2">64</label>
+                    <div class="div-1">
+                        <span id="txt1"></span>
+                    </div>
+                </div>
+                <div class="div-2">
+                    <p>111 * 11</p>
+
+                    <input type="checkbox" id="3" />
+                    <label for="3">1212</label>
+                    <input type="checkbox" id="4" />
+                    <label for="4">1221</label>
+                    <div class="div-1">
+                        <span id="txt2"></span>
+                    </div>
+                </div>
+                <div class="div-2">
+                    <p>64 / 4</p>
+
+                    <input type="checkbox" id="5" />
+                    <label for="5">16</label>
+                    <input type="checkbox" id="6" />
+                    <label for="6">18</label>
+                    <div class="div-1">
+                        <span id="txt3"></span>
+                    </div>
+                </div>
+                <div class="div-2">
+                    <p>55 * 5</p>
+
+                    <input type="checkbox" id="7" />
+                    <label for="7">225</label>
+                    <input type="checkbox" id="8" />
+                    <label for="8">275</label>
+                    <div class="div-1">
+                        <span id="txt4"></span>
+                    </div>
+                </div>
+            </div>
+            <button onclick="tempo()">Começar</button>
+            <button onclick="mostrar()">Mostra respostas</button>
+        </div>
+    </body>
+</html>

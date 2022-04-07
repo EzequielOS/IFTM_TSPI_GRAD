@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            function showUsers() {
+                usr = localStorage.getItem("username");
+                pwd = localStorage.getItem("senha");
+
+                document.write("<h1>Usuarios Cadastrados</h1>");
+                for (i = 0; i < localStorage.length; i++) {
+                    usr = localStorage.key(i);
+                    pwd = localStorage.getItem(localStorage.key(i));
+
+                    document.write(`<p> ${usr} : ${pwd}<p>`);
+                }
+            }
+        </script>
+    </head>
+    <body onload="showUsers()"></body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            function valida() {
+                var texto = document.getElementById("txtValor").value;
+                var padrao = /^[0-4]{3,5}\.[a-j][x-z]\((JSB|PWE)\)\s?@$/i;
+                padrao.test(texto)
+                    ? alert("O Texto é valido!")
+                    : alert("O texto não é valido!");
+            }
+            console.log(texto);
+        </script>
+    </head>
+    <body>
+        <label for="txtValor">Digite o Texto</label>
+        <input type="text" id="txtValor" />
+        <input type="button" value="Validar" onclick="valida()" />
+    </body>
+</html>

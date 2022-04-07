@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="Author" content="Ezequiel de Oliveira">
+<meta name="Description" content="Js Basico">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="utf-8">
+<title></title>
+<script type="text/javascript">
+	texto = prompt("Qual o seu texto?", "O rato roeu a roupa do rei de roma");
+	palavras = texto.split(" ");
+vetLetra = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+
+for(i=0; i<vetLetra.length; i++){
+	letra = vetLetra[i];
+	first = false;
+	for(j=0; j<palavras.length; j++){
+		if (palavras[j].charAt(0) == letra){
+			if(!first){
+				document.write(`<p> Palavras iniciada em <span style="color:green"> ${letra}</p><ul>`)
+				first = true;
+			}
+				document.write(`<li>${palavras[j]}</li> `)
+		}
+	}
+	document.write(`</ul>`)
+}
+	
+	</script>
+</head>
+<body>
+</body>
+</html>

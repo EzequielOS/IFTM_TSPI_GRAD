@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            div {
+                align-items: center;
+                text-align: center;
+                border: 2px solid black;
+                width: 250px;
+                margin: auto;
+                background-color: lightslategrey;
+            }
+            div button {
+                padding: 10px;
+                margin: 10px;
+            }
+            p {
+                padding: 5px;
+            }
+            label {
+                font-weight: bold;
+                font-size: 18px;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <h1>Cronômetro</h1>
+
+            <p id="msg"></p>
+            <label for="txt1">Digite os segundos:</label>
+            <input type="number" id="txt1" />
+            <p>Tempo: <span id="cronometro">0</span></p>
+            <button onclick="ativarCronometro()">Começar!</button>
+        </div>
+        <script>
+            var cronometro = document.getElementById("cronometro");
+
+            function ativarCronometro() {
+                msg = "";
+                document.getElementById("msg").innerHTML = msg;
+                texto = document.getElementById("txt1").value.trim();
+
+                if (texto == "" || texto == 0)
+                    alert(
+                        "Você deve inserir os segundos e o valor deve ser diferente de zero!"
+                    );
+                else {
+                    cronometro.innerHTML = texto;
+                    var intervalo = setInterval(function () {
+                        var novoValor = parseInt(cronometro.innerHTML, 10) - 1;
+                        cronometro.innerHTML = novoValor;
+
+                        if (novoValor == 0) {
+                            clearInterval(intervalo);
+                            msg = "Tempo esgotado!";
+                            document.getElementById("msg").innerHTML = msg;
+                        }
+                    }, 1000);
+                }
+            }
+        </script>
+    </body>
+</html>

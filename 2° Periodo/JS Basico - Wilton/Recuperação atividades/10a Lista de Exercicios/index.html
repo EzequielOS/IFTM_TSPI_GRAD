@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="Author" content="Ezequiel de Oliveira">
+<meta name="Description" content="Js Basico">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="utf-8">
+<title>Document</title>
+<style>
+
+.container {
+	display: flex;
+	flex-direction: row;
+	padding: 2% 10% 2% 10%;
+}
+.containerLeft {
+	padding-right: 5%;
+}
+</style>
+<script type="text/javascript">
+	var cont = 1;
+	var picture;
+	
+	function play(){
+		timer = setInterval("carrossel()", 1000);
+	}
+	function pause(){
+		clearInterval(timer);
+	}
+	function carrossel(){
+		cont++;
+		if(cont > 3) cont =1;
+		switch(cont){
+			case 1:
+				picture = "corola.jpg";
+				document.getElementById("caracteristicas").innerHTML = `
+					<li>Nome: Corola</li>
+					<li>Potencia do motor: 155 cv</li>
+					<li>Garantia: 3 Anos</li>
+					<li>Consumo (cidade): não informado</li>`;
+				break;
+			case 2:
+				picture = "civic.jpg";
+				document.getElementById("caracteristicas").innerHTML = `
+					<li>Nome: Civic</li>
+					<li>Potencia do motor: 140cv</li>
+					<li>Garantia: 3 anos</li>
+					<li>Consumo (cidade):  9,2km/l</li>`;
+				break;
+			case 3:
+				picture = "focus.jpg";
+				document.getElementById("caracteristicas").innerHTML = `
+					<li>Nome: Focus</li>
+					<li>Potencia do motor: 172cv</li>
+					<li>Garantia: 5 anos</li>
+					<li>Consumo (cidade):  8,5km/l</li>`;
+		}
+		document.getElementById("imgs").src = `./imagens/${picture}`
+	}
+</script>
+</head>
+<body onload="play()">
+	<h1 align="center" style="color: red;">Lançamentos 2014 - Carros Sedãs</h1>
+	<div class="container">
+		<div class="containerLeft">
+			<img alt="Carrosel de Carros" onmouseenter="pause()" onmouseout="play()" id=imgs src="./imagens/corola.jpg">
+		</div>
+		<div>
+		<h2 align="center" style="color: green;">Caracteristicas do carro</h2>
+		<ul id="caracteristicas">
+			<li>Nome: Corola</li>
+			<li>Potencia do motor: 155 cv</li>
+			<li>Garantia: 3 Anos</li>
+			<li>Consumo (cidade): não informado</li> 
+		</ul>
+		</div>
+	</div>
+</body>
+</html>

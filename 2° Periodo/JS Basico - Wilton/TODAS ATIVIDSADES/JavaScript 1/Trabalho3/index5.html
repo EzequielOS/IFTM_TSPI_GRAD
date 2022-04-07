@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            N = prompt("Digite o número de passageiros!");
+            idade = [];
+            nome = [];
+            soma = 0;
+            idades = [];
+            for (i = 0; i < N; i++) {
+                nome.push(prompt(`Qual o nome do passageiro ${i + 1}?`));
+                idade = parseInt(prompt("Qual a idade do passageiro?"));
+                soma = soma + idade;
+                idades.push(idade);
+            }
+            media = Number((soma / N).toFixed(2));
+            document.write(`<p> A media das idades: ${media} </p>`);
+            idPassageiro = parseInt(Math.random() * N);
+            document.write(
+                `<p> O passageiro sorteado: ${nome[idPassageiro]} </p>`
+            );
+        </script>
+    </head>
+    <body></body>
+</html>

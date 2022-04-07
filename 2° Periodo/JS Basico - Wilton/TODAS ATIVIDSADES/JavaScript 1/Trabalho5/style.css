@@ -1,0 +1,35 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 2px solid black;
+    margin: auto;
+    width: 500px;
+}
+.input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin: 15px;
+}
+.button div {
+    margin: 0px 15px 0px 15px;
+}
+p {
+    color: red;
+    font-size: 10px;
+    font-family: Verdana;
+}
+h1 {
+    font-size: 24px;
+    color: blue;
+    font-family: Verdana;
+}

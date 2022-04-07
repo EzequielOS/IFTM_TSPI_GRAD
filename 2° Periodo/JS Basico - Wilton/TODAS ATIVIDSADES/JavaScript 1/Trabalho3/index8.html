@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .boxExterna {
+                border: 2px solid blue;
+                width: 600px;
+                margin: auto;
+            }
+            img {
+                padding: 55px;
+            }
+            p {
+                text-align: center;
+                font-weight: bold;
+                font-size: 20px;
+            }
+        </style>
+        <script>
+            jogador1 = parseInt(Math.random() * 3);
+            jogador2 = parseInt(Math.random() * 3);
+            document.write(`<div class = "boxExterna">`);
+            document.write(`<img src="jokenpo/${jogador1}.png" alt="">`);
+
+            document.write(`<img src="jokenpo/${jogador2}.png" alt="">`);
+            document.write(`<div>`);
+
+            switch (jogador1) {
+                case 0:
+                    switch (jogador2) {
+                        case 0:
+                            document.write(`<p>Empate!</p>`);
+                            break;
+                        case 1:
+                            document.write(
+                                `<p>Jogador 2 ganhou, parabéns!  </p>`
+                            );
+                            document.write(`<p>Papel vence Pedra!</p>`);
+                            break;
+                        case 2:
+                            document.write(
+                                `<p>Jogador 1 ganhou, parabéns!  </p>`
+                            );
+                            document.write(`<p>Pedra vence tesoura!</p>`);
+                            break;
+                    }
+                    break;
+                case 1:
+                    switch (jogador2) {
+                        case 0:
+                            document.write(
+                                `<p>Jogador 1 ganhou, parabéns!  </p>`
+                            );
+                            document.write(`<p>Papel vence Pedra!</p>`);
+                            break;
+                        case 1:
+                            document.write(`<p>Empate!</p>`);
+                            break;
+                        case 2:
+                            document.write(
+                                `<p>Jogador 2 ganhou, parabéns!  </p>`
+                            );
+                            document.write(`<p>Tesoura vence Papel!</p>`);
+                            break;
+                    }
+                    break;
+                case 2:
+                    switch (jogador2) {
+                        case 0:
+                            document.write(
+                                `<p>Jogador 2 ganhou, parabéns!  </p>`
+                            );
+                            document.write(`<p>Pedra vence tesoura!</p>`);
+                            break;
+                        case 1:
+                            document.write(
+                                `<p>Jogador 1 ganhou, parabéns!  </p>`
+                            );
+                            document.write(`<p>Tesoura vence Papel!</p>`);
+                            break;
+                        case 2:
+                            document.write(`<p>Empate!</p>`);
+                            break;
+                    }
+                    break;
+            }
+        </script>
+    </head>
+    <body></body>
+</html>

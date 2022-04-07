@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="Author" content="Ezequiel de Oliveira">
+<meta name="Description" content="Js Basico">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="utf-8">
+<title>Votos da Dysneilande</title>
+<style type="text/css">
+.boxMain {
+	top: 5%;
+	left: 15%;
+	position: absolute
+}
+
+.boxes {
+	text-align: center;
+	display: inline-block;
+}
+
+.boxes strong {
+	color: rgb(189, 22, 29);
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1.5em;
+}
+
+.imgBox {
+	border: solid 3px black;
+	padding-right: 2em;
+	padding-left: 2em;
+	background-color: rgb(196, 214, 156);
+	margin: 3px;
+}
+
+.imgBox:hover {
+	background-color: slategray;
+}
+
+.imgBox p {
+	text-align: center;
+	font-size: medium;
+	font-weight: bold;
+}
+</style>
+<script type="text/javascript">
+	var cand1 = 0;
+	var cand2 = 0;
+	var cand3 = 0;
+	var cand4 = 0;
+	
+	function votarNele(id) {
+
+		switch (id) {
+			case "cand1":
+				cand1++;
+				document.getElementById("cand1").innerHTML = `${cand1}`;
+				break;
+			case "cand2":
+				cand2++;
+				document.getElementById("cand2").innerHTML = `${cand2}`;
+				break;
+			case "cand3":
+				cand3++;
+				document.getElementById("cand3").innerHTML = `${cand3}`;
+				break;
+			case "cand4":
+				cand4++;
+				document.getElementById("cand4").innerHTML = `${cand4}`;
+		}
+
+		
+	}
+</script>
+</head>
+<body>
+	<div class="boxMain">
+		<div class="boxes">
+			<strong>CANDIDATO 1</strong>
+			<div class="imgBox" onclick="votarNele('cand1')">
+				<p>Mickey</p>
+				<img alt="" src="./images/ex002/candidato1.jpg" width="160em"
+					height="260em"> <br>
+				<p style="display: inline;">Numero de votos:</p>
+				<strong id="cand1">0</strong>
+			</div>
+			<!-- 
+				<p style="display: inline;">Numero de votos: </p>
+				<strong>5</strong> 
+			-->
+
+		</div>
+
+		<div class="boxes">
+			<strong>CANDIDATO 2</strong>
+			<div class="imgBox" onclick="votarNele('cand2')">
+				<p>Minnie</p>
+				<img alt="" src="./images/ex002/candidato2.jpg" width="160em"
+					height="260em"> <br>
+				<p style="display: inline;">Numero de votos:</p>
+				<strong id="cand2">0</strong>
+			</div>
+		</div>
+		<div class="boxes">
+			<strong>CANDIDATO 3</strong>
+			<div class="imgBox" onclick="votarNele('cand3')">
+				<p>Pluto</p>
+				<img alt="" src="./images/ex002/candidato3.jpg" width="160em"
+					height="260em"> <br>
+				<p style="display: inline;">Numero de votos:</p>
+				<strong id="cand3">0</strong>
+			</div>
+		</div>
+		<div class="boxes">
+			<strong>CANDIDATO 4</strong>
+			<div class="imgBox" onclick="votarNele('cand4')">
+				<p>Pateta</p>
+				<img alt="" src="./images/ex002/candidato4.jpg" width="160em"
+					height="260em"> <br>
+				<p style="display: inline;">Numero de votos:</p>
+				<strong id="cand4">0</strong>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
