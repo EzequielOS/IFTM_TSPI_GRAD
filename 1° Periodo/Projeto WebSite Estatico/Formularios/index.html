@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+    <head>
+		<meta name="Author" content="Ezequiel de Oliveira">
+		<meta name="Description" content="Pagina com Formularios">
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Atividade</title>
+    </head>
+    <body>
+        <h1>Cadastro de Clientes</h1>
+        <p style="color: red">
+            Todos os campos são de preenchimento obrigatório!
+        </p>
+        <form>
+            <fieldset>
+                <legend>Dados Pessoais:</legend>
+                <label for="name">Nome</label>
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Nome Completo"
+                    required
+                /><br /><br />
+                <label for="sex">Sexo:</label>
+                <input type="radio" name="sex" id="masc" required /><label
+                    for="masc"
+                    >Masculino</label
+                >
+                <input type="radio" name="sex" id="fem" /><label for="fem"
+                    >Feminino</label
+                >
+                <br /><br />
+                <label for="nascimento">Data de Nascimento:</label>
+                <input
+                    type="date"
+                    id="nascimento"
+                    name="nascimento"
+                    required
+                /><br /><br />
+            </fieldset>
+            <fieldset>
+                <legend>Informações de contato:</legend>
+                <label for="email">Email:</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                /><br /><br />
+                <label for="telefone">Telefone Celular:</label
+                ><input
+                    type="tel"
+                    id="telefone"
+                    name="telefone"
+                    maxlength="9"
+                    placeholder="Apenas números, (máx 9)"
+                    required
+                /><br /><br />
+                <label for="name">Website Pessoal</label>
+                <input type="url" id="web" name="web" required /><br /><br />
+            </fieldset>
+            <fieldset>
+                <legend>Localização:</legend>
+                <label for="ende">Endereço:</label>
+                <input type="text" id="ende" name="ende" required /><br /><br />
+                <label for="num">Número:</label
+                ><input
+                    type="number"
+                    id="num"
+                    name="num"
+                    step="1"
+                    min="1"
+                    max="9999"
+                    style="width: 200px"
+                    placeholder="Apenas números, (máx 9)"
+                    required
+                /><br /><br />
+                <label for="city">Cidade</label>
+                <input type="text" id="city" name="city" required /><br /><br />
+                <label for="estado">Estado:</label>
+                <select id="estado" required>
+                    <option>Minas Gerais</option>
+                    <option>São Paulo</option>
+                    <option>Amazonas</option>
+                    <option>Mato Grosso</option>
+                    <option>Mato Grosso do Sul</option>
+                    <option>Santa Catarina</option>
+                    <option>Amapá</option>
+                    <option>Acré</option>
+                    <option>Alagoas</option>
+                    <option>Bahia</option>
+                    <option>Ceará</option>
+                    <option>Distrito Federal</option>
+                    <option>Espírito Santo</option>
+                    <option>Goias</option>
+                    <option>Maranhão</option>
+                    <option>Pará</option>
+                    <option>Paraíba</option>
+                    <option>Paraná</option>
+                    <option>Pernambuco</option>
+                    <option>Piauí</option>
+                    <option>Rio de Janeiro</option>
+                    <option>Rio Grande do Norte</option>
+                    <option>Rio Grande do Sul</option>
+                    <option>Rondônia</option>
+                    <option>Roraima</option>
+                    <option>Sergipe</option>
+                    <option>Tocantins</option>
+                </select>
+                <br /><br />
+            </fieldset>
+
+            <input type="submit" value="Cadastrar" />
+            <input type="reset" value="Limpar" />
+        </form>
+    </body>
+</html>

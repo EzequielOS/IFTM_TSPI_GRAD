@@ -1,0 +1,13 @@
+table, th, td{
+	border: 1px solid;
+	border-collapse: collapse;
+	margin: auto;
+	padding-bottom: 10px;
+}
+#elemnt{
+	width: 30%;
+}
+#elemnt2{
+	text-align:left;
+	width: 45%;
+}
