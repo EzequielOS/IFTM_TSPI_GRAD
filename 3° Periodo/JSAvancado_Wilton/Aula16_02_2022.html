@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<script type="text/javascript">
+			/* 
+				vet = [1,2,3,4,5,6,7]
+			
+				vet.forEach(elemento => document.write(`${elemento} ->`))
+			 */	
+					
+			/*
+				vet = [1,2,3,4,5,6,7]
+				vet.forEach(imprimir);
+				function imprimir(valor){
+					document.write(valor + " ->");
+				}
+				
+			*/
+					 
+		 
+				
+			/*
+				vet = [1,2,3,4,5,6,7]
+				
+				vet.forEach(imprimir);
+				imprimir = (valor) => document.write(valor + " ->");
+				
+			 */
+				 
+			/*  var total = window.prompt("quantos nomes");
+			 var pessoas = [];
+			 
+			 for( i=0; i < total; i++)
+				 pessoas.push(window.prompt(`Nome vai ser? ${i+1}:`));
+				 pessoas.forEach(nome => document.write(`<p style="color:red">${nome}<\p>`))
+				 
+			  */
+			  
+			/*  
+			  vet = [1,2,3,4,5,6,7]
+				
+				vet.forEach((valor, i) => {if(valor%2 != 0)document.write(`${i}`)});
+		 
+			#######	VET REDUCE ############
+
+				vetCal = vet1.reduce((total, elem) => total-=elem);
+				console.log(vetCal)
+			#################################				 
+				 
+			*/
+		  //vet2 = vet.map(valor => {return valor *2});
+			
+		  
+		  vet = [3,7,10]
+		  var total = prompt("quantos numeros?")
+		  vet = vet.map((valor, i) => i%2 == 0 ? valor*2 : valor*3)
+		  console.log(vet);
+		</script>
+</head>
+
+</body>
+</html>

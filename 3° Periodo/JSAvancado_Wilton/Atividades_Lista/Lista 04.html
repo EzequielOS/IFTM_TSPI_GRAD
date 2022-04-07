@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Document</title>
+<script type="text/javascript">
+			let text = '{"trabalhadores":[' +
+			'{"nome":"José da Silva", "Idade":20,"Sexo":"M", "salario":2500},'+
+			'{"nome":"Ana Maria", "Idade":33,"Sexo":"F", "salario":5.500},'+
+			'{"nome":"Pedro Alcântara", "Idade":22,"Sexo":"M", "salario":1500},'+
+			'{"nome":"Maria da Silva", "Idade":55,"Sexo":"F", "salario":7500},'+
+			'{"nome":"Antônio Carlos", "Idade":45,"Sexo":"M", "salario":1000}]}';
+			
+			const obj = JSON.parse(text);
+			//console.log(obj.trabalhadores[0]);
+
+			//document.getElementById("demo").innerHTML = `${obj.trabalhadores[0].nome}  ${obj.trabalhadores[0].salario}`;
+			document.write(`${obj.trabalhadores[0].nome}  ${obj.trabalhadores[0].salario}`);
+			
+			
+</script>
+</head>
+<body>
+		
+<p id="demo"></p>
+</body>
+</html>

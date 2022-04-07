@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+	<script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+	<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+	<style>
+		.box{
+			border: 2px solid orange;
+			background-color: salmon;
+			position: absolute;
+		}
+	</style>
+
+	<title>Document</title>
+
+</head>
+
+<body>
+	<div id="root"></div>
+	<button onClick="playPosition()">POS!</button>
+
+	<script type="text/babel">
+		var nome = prompt("Qual Texto na BOX? ");
+		var altura = prompt("Qual Altura da BOX? ");
+		var largura = prompt("Qual Largura da BOX? ");
+
+		var larJan = window.innerWidth - largura;
+		var altJan = window.innerHeight - altura;
+
+		function getNumAleat(min, max) {
+  			return Math.random() * (max - min) + min;
+    
+		}
+
+		function CriaBox(props){
+			var pos1 = getNumAleat(0, altJan);
+			var pos2 = getNumAleat(0, larJan);
+
+			return (
+				<div className="box" style={{width:props.larg + "px", height:props.alt+ "px", top:pos1, left:pos2}}>{props.name}</div>
+			);
+		}
+		
+		function playPosition(){
+			ReactDOM.render(<CriaBox larg={largura} alt={altura} name={nome} />, document.getElementById("root"));
+		}
+
+	</script>
+</body>
+
+</html>
